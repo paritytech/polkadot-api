@@ -8,6 +8,7 @@
   "scripts": {
     "start": "tsup-node src/main.ts --watch --clean --format esm --platform node --onSuccess \"node --enable-source-maps dist/main.js\"",
     "nominators": "tsup-node src/all-nominators.ts --clean --format esm --platform node --onSuccess \"node --enable-source-maps dist/all-nominators.js\"",
+    "examineCall": "tsup-node src/examine-call.ts --clean --format esm --platform node --onSuccess \"node --enable-source-maps dist/examine-call.js\"",
     "tx": "tsup-node src/tx.ts --watch --clean --format esm --platform node --onSuccess \"node --enable-source-maps dist/tx.js\"",
     "client": "tsup-node src/client.ts --watch --clean --format esm --platform node --onSuccess \"node --enable-source-maps dist/client.js\""
   },

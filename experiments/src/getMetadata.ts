@@ -36,7 +36,7 @@ const withLogsProvider = (input: ConnectProvider): ConnectProvider => {
   }
 }
 
-export const { chainHead } = createClient(withLogsProvider(smProvider))
+export const { chainHead } = createClient(smProvider)
 
 type Metadata = CodecType<typeof metadata>
 

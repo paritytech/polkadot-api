@@ -56,23 +56,21 @@ const call = Struct({
   }),
 })
 
-const transaction = toHex(
-  await createTx(
-    from,
-    call.enc({
-      module: 4,
-      method: 0,
-      args: {
-        dest: {
-          tag: "Id",
-          value:
-            "5DyTf5gsCQG3ycM1venTzjoEPMUhKtoU9e9zg1MvnJddbye8" as SS58String,
-        },
-        value: 1000000n,
-      },
-    }),
-  ),
-)
+const callData = call.enc({
+  module: 4,
+  method: 0,
+  args: {
+    dest: {
+      tag: "Id",
+      value: "5DyTf5gsCQG3ycM1venTzjoEPMUhKtoU9e9zg1MvnJddbye8" as SS58String,
+    },
+    value: 1000000n,
+  },
+})
+
+console.log(toHex(callData))
+
+const transaction = toHex(await createTx(from, callData))
 
 client.transaction(
   transaction,
