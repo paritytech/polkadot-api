@@ -31,5 +31,10 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md}": "prettier --write"
+  },
+  "pnpm": {
+    "overrides": {
+      "smoldot": "2.0.6"
+    }
   }
 }

@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  smoldot: 2.0.6
+
 importers:
 
   .:
@@ -1612,7 +1615,7 @@ packages:
     requiresBuild: true
     dependencies:
       '@substrate/connect-extension-protocol': 1.0.1
-      smoldot: 2.0.1
+      smoldot: 2.0.6
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -1623,7 +1626,7 @@ packages:
     requiresBuild: true
     dependencies:
       '@substrate/connect-extension-protocol': 1.0.1
-      smoldot: 2.0.1
+      smoldot: 2.0.6
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -3958,8 +3961,8 @@ packages:
       is-fullwidth-code-point: 4.0.0
     dev: true
 
-  /smoldot@2.0.1:
-    resolution: {integrity: sha512-Wqw2fL/sELQByLSeeTX1Z/d0H4McmphPMx8vh6UZS/bIIDx81oU7s/drmx2iL/ME36uk++YxpRuJey8/MOyfOA==}
+  /smoldot@2.0.6:
+    resolution: {integrity: sha512-/FQ6urmnG1TQuIu15NB9lXeNS0MX5f57vkX4RoBuVA+gAq4bcF1k2nMb40tfKCBW9PKyfEf478DN1YUMVOlWjg==}
     dependencies:
       ws: 8.14.1
     transitivePeerDependencies:
