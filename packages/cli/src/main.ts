@@ -284,16 +284,9 @@ while (!exit) {
         default: `${options.key}-metadata.scale`,
       })
 
-      const writeToPkgJSON = await confirm({
-        message: "Write to package.json?",
-        default: true,
-      })
-
       const outputFolder = await input({
         message: "codegen output directory",
       })
-
-      await writeMetadataToDisk(data, metadataFilePath)
 
       const args = {
         data,
@@ -301,6 +294,11 @@ while (!exit) {
         metadataFile: metadataFilePath,
         outputFolder,
       }
+
+      const writeToPkgJSON = await confirm({
+        message: "Write to package.json?",
+        default: true,
+      })
 
       if (writeToPkgJSON) {
         await outputDescriptors({
@@ -323,6 +321,7 @@ while (!exit) {
         })
       }
 
+      await writeMetadataToDisk(data, metadataFilePath)
       await outputCodegen(data, outputFolder, key)
       break
     }
