@@ -33,7 +33,7 @@
     "@types/chrome": "^0.0.246"
   },
   "peerDependencies": {
-    "smoldot": "2.0.3"
+    "smoldot": "2.x"
   },
   "dependencies": {
     "@polkadot-api/client": "workspace:*",
