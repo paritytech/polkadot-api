@@ -27,23 +27,23 @@ const ExtraInput = ({ input }: CommonProps) => {
   const [show, setShow] = useState<boolean>(false)
   return (
     input && (
-      <>
+      <div className="xtra-wrapper">
         <div
+          className="xtra-input"
           style={{
             display: show ? "block" : "none",
-            margin: "0.5rem 0 0 1rem",
           }}
         >
           {input && <Input value={input} label={"Input"} smaller isSimple />}
         </div>
         <button
           className="show-button"
-          style={{ fontSize: "0.7rem" }}
+          style={{}}
           onClick={() => setShow(!show)}
         >
-          {show ? "Hide" : "Show"}
+          {show ? "Hide" : "Show"} Extra Info
         </button>
-      </>
+      </div>
     )
   )
 }
@@ -68,7 +68,7 @@ export const Input: FC<FullProps> = ({
       >
         {label && <div className="label">{snakeToCamel(label)}</div>}
         <input
-          disabled={disabled}
+          disabled={smaller || disabled}
           id={Math.random().toString()}
           value={value}
           placeholder={!value ? "0x.." : undefined}
@@ -96,15 +96,8 @@ export const Input: FC<FullProps> = ({
                 entry[0] === "address"
               ) {
                 return (
-                  <div style={{ display: "flex", flexGrow: "3" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        height: "100%",
-                        position: "relative",
-                        alignItems: "center",
-                      }}
-                    >
+                  <div className="acc-wrapper">
+                    <div className="account-id">
                       <Polkicon copy address={entry_one as string} />
                     </div>
                     <Input

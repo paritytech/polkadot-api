@@ -12,6 +12,11 @@ $color: #5c5c5c;
   background-color: $label-color;
   color: $background-color;
   cursor: pointer;
+  font-size: 0.7rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 999;
 }
 
 .custom-input-wrapper {
@@ -33,16 +38,18 @@ $color: #5c5c5c;
 
   &.smaller {
     padding: 0.2rem;
+    background-color: $background-color;
+    color: $disabled-color;
 
     .label {
       font-weight: 800;
       color: $input-color;
-      font-size: 0.8rem;
+      font-size: 0.7rem;
       margin-bottom: 0;
     }
 
     input {
-      font-size: 0.9rem;
+      font-size: 0.7rem;
     }
   }
 
@@ -80,4 +87,26 @@ $color: #5c5c5c;
   display: flex;
   background-color: $background-color;
   color: $color;
+
+  .acc-wrapper {
+    display: flex;
+    flex-grow: 3;
+
+    .account-id {
+      display: flex;
+      height: 100%;
+      position: relative;
+      // align-items: center;
+      background: #fff;
+      padding: 0.5rem;
+    }
+  }
+}
+
+.xtra-wrapper {
+  position: relative;
+
+  .xtra-input {
+    padding: 0.5rem 0 0 1rem;
+  }
 }

@@ -1,49 +1,78 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { ComplexShape, PrimitiveDecoded } from "@polkadot-api/substrate-codegen"
+import {
+  ComplexShape,
+  PrimitiveDecoded,
+  StringRecord,
+} from "@polkadot-api/substrate-codegen"
 import { KeyValueType } from "./types"
 import { snakeToCamel } from "@polkadot-cloud/utils"
 import { Input } from "../Input"
+import { Button } from "@polkadot-cloud/react"
+
+import "./index.scss"
 
 const separatorStyle = {
   border: "0.1rem dashed #999",
   padding: "0.2rem",
-  TextAlign: "center",
+  marginTop: "1rem",
 }
 
 interface ArgsProps {
   value: any
   codec: PrimitiveDecoded["codec"] | ComplexShape["codec"]
-  innerDocs?: object
+  innerDocs?: StringRecord<string[]>
   docs?: [string]
   input?: string
   path?: [string]
   tag?: string
 }
 
+const capFirstLetter = (str: string): string => {
+  const s = snakeToCamel(str)
+  return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+const PathComponent = (props: { path: [string] }) => (
+  <div className="help_tooltip path_class">
+    <Button text=">" type="text" outline />
+    <span className="help_tooltiptext_right">
+      <span>Path:</span>
+      {props.path.join(" > ")}
+    </span>
+  </div>
+)
+
 export const ArgsStructure = (args: ArgsProps) => {
   switch (args?.codec) {
     case "Struct": {
-      // TODO: Fix the innerDocs
-      // const { innerDocs } = args
+      const { innerDocs } = args
       const some = []
       for (const [k, v] of Object.entries(args?.value as KeyValueType)) {
         const { codec, value, input, docs, path } = v as ArgsProps
+
         switch (codec) {
           case "Sequence": {
             some.push(
-              <div
-                style={Object.assign({}, separatorStyle, {
-                  marginTop: "1rem",
-                })}
-              >
-                <div className="struct_title">{snakeToCamel(k)}</div>
+              <div style={separatorStyle}>
+                <div className="struct_title">{capFirstLetter(k)}</div>
                 <ArgsStructure
                   codec={codec}
                   value={value}
                   input={input}
-                  docs={docs}
                   path={path}
                 />
+                {innerDocs &&
+                innerDocs[k] &&
+                Object.values(innerDocs[k]).length ? (
+                  <div className="help_tooltip">
+                    <Button type="help" outline />
+                    <span className="help_tooltiptext_left">
+                      {Object.values(innerDocs[k]).map((d) => (
+                        <span>{d}</span>
+                      ))}
+                    </span>
+                  </div>
+                ) : null}
               </div>,
             )
             break
@@ -84,14 +113,15 @@ export const ArgsStructure = (args: ArgsProps) => {
           default: {
             some.push(
               <div style={separatorStyle}>
-                <Input
-                  isSimple
-                  label={
-                    snakeToCamel(k) + " : " + (path ? path?.join("/") : "")
-                  }
-                  value={value.tag}
-                  disabled
-                />
+                <div style={{ position: "relative" }}>
+                  <Input
+                    isSimple
+                    label={capFirstLetter(k)}
+                    value={value.tag}
+                    disabled
+                  />
+                  {path ? <PathComponent path={path} /> : null}
+                </div>
                 <ArgsStructure
                   codec={codec}
                   value={value}
@@ -190,30 +220,26 @@ export const ArgsStructure = (args: ArgsProps) => {
             ? value?.tag || value?.codec
             : value
 
-        return typeof value?.value !== "string" ? (
-          <>
+        return (
+          <div style={{ position: "relative" }}>
             <Input
               codec={codec}
-              label={args?.tag + " : " + path?.join("/")}
+              label={capFirstLetter(args?.tag)}
               value={v}
               input={input}
             />
-            <ArgsStructure
-              tag={value?.value?.tag}
-              codec={value?.value?.codec}
-              value={value?.value?.value}
-              input={value?.value?.input}
-              docs={value?.value?.docs}
-              path={value?.value?.path}
-            />
-          </>
-        ) : (
-          <Input
-            codec={codec}
-            label={args?.tag + " : " + path?.join("/")}
-            value={v}
-            input={input}
-          />
+            {path ? <PathComponent path={path} /> : null}
+            {typeof value?.value !== "string" ? (
+              <ArgsStructure
+                tag={value?.value?.tag}
+                codec={value?.value?.codec}
+                value={value?.value?.value}
+                input={value?.value?.input}
+                docs={value?.value?.docs}
+                path={value?.value?.path}
+              />
+            ) : null}
+          </div>
         )
       }
     }

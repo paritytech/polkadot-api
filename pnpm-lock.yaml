@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -58,8 +58,8 @@ importers:
         specifier: ^1.0.43
         version: 1.0.43
       '@polkadot-cloud/react':
-        specifier: ^0.1.121
-        version: 0.1.121(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^0.1.127
+        version: 0.1.127(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0)
       '@storybook/addon-essentials':
         specifier: ^7.5.2
         version: 7.5.2(@types/react-dom@18.2.8)(@types/react@18.2.23)(react-dom@18.2.0)(react@18.2.0)
@@ -190,7 +190,7 @@ importers:
         version: 0.4.3(eslint@8.49.0)
       vite:
         specifier: ^4.4.5
-        version: 4.4.9(@types/node@20.6.0)
+        version: 4.4.9(sass@1.69.5)
 
   experiments:
     dependencies:
@@ -2691,38 +2691,39 @@ packages:
     resolution: {integrity: sha512-dfLbk+PwWvFzSxwk3n5ySL0hfBog779o8h68wK/7/APo/7cgyWp5jcXockbxdk5kFRkbeXWm4Fbi9FrdN381sA==}
     dev: true
 
-  /@ledgerhq/devices@8.0.7:
-    resolution: {integrity: sha512-BbPyET52lXnVs7CxJWrGYqmtGdbGzj+XnfCqLsDnA7QYr1CZREysxmie+Rr6BKpNDBRVesAovXjtaVaZOn+upw==}
+  /@ledgerhq/devices@8.0.8:
+    resolution: {integrity: sha512-0j7E8DY2jeSSATc8IJk+tXDZ9u+Z7tXxB8I4TzXrfV/8A5exMh/K1IwX6Jt1zlw1wre4CT9MV4mzUs3M/TE7lg==}
     dependencies:
-      '@ledgerhq/errors': 6.14.0
-      '@ledgerhq/logs': 6.10.1
-      rxjs: 6.6.7
+      '@ledgerhq/errors': 6.15.0
+      '@ledgerhq/logs': 6.11.0
+      rxjs: 7.8.1
       semver: 7.5.4
     dev: true
 
-  /@ledgerhq/errors@6.14.0:
-    resolution: {integrity: sha512-ZWJw2Ti6Dq1Ott/+qYqJdDWeZm16qI3VNG5rFlb0TQ3UcAyLIQZbnnzzdcVVwVeZiEp66WIpINd/pBdqsHVyOA==}
+  /@ledgerhq/errors@6.15.0:
+    resolution: {integrity: sha512-6xaw5/mgoht62TnL3rXsaQYEFwpnXyNDk1AOSJksIjFHx9bHUnkyVmrnGQDj0JLzi+E7bHEgTrpCs8wpeDh9jA==}
     dev: true
 
-  /@ledgerhq/hw-transport-webhid@6.27.19:
-    resolution: {integrity: sha512-RMnktayqqLE2uFQDw9TKoW+WSP8KnT0ElKcIISf3sXVrzHD2y0moPk/wXOzGfi+cgN4uiKy86UD/5mgz3wlm6Q==}
+  /@ledgerhq/hw-transport-webhid@6.27.20:
+    resolution: {integrity: sha512-zNZgTTpbPFBHgzQRqVl3+Y0ySOFkEIGxxHT1y+AgSxRmoLgfzsBQgYy6z3jZZyJQ92B8Tl95hAvMm9vo7IqxWA==}
     dependencies:
-      '@ledgerhq/devices': 8.0.7
-      '@ledgerhq/errors': 6.14.0
-      '@ledgerhq/hw-transport': 6.28.8
-      '@ledgerhq/logs': 6.10.1
+      '@ledgerhq/devices': 8.0.8
+      '@ledgerhq/errors': 6.15.0
+      '@ledgerhq/hw-transport': 6.29.0
+      '@ledgerhq/logs': 6.11.0
     dev: true
 
-  /@ledgerhq/hw-transport@6.28.8:
-    resolution: {integrity: sha512-XxQVl4htd018u/M66r0iu5nlHi+J6QfdPsORzDF6N39jaz+tMqItb7tUlXM/isggcuS5lc7GJo7NOuJ8rvHZaQ==}
+  /@ledgerhq/hw-transport@6.29.0:
+    resolution: {integrity: sha512-WQfzxt3EnnbOmzZVYiCgSmNsqafBOFQn40awvUPY2IZviJRs23/1ANPHAo76bzPV88+Qk0+1wZlcnIanGN6fFA==}
     dependencies:
-      '@ledgerhq/devices': 8.0.7
-      '@ledgerhq/errors': 6.14.0
+      '@ledgerhq/devices': 8.0.8
+      '@ledgerhq/errors': 6.15.0
+      '@ledgerhq/logs': 6.11.0
       events: 3.3.0
     dev: true
 
-  /@ledgerhq/logs@6.10.1:
-    resolution: {integrity: sha512-z+ILK8Q3y+nfUl43ctCPuR4Y2bIxk/ooCQFwZxhtci1EhAtMDzMAx2W25qx8G1PPL9UUOdnUax19+F0OjXoj4w==}
+  /@ledgerhq/logs@6.11.0:
+    resolution: {integrity: sha512-HHK9y4GGe4X7CXbRUCh7z8Mp+WggpJn1dmUjmuk1rNugESF6o8nAOnXA+BxwtRRNV3CgNJR3Wxdos4J9qV0Zsg==}
     dev: true
 
   /@mdn/browser-compat-data@5.3.14:
@@ -2834,8 +2835,12 @@ packages:
     resolution: {integrity: sha512-Tm2qkFH/B3+dvvE1+MY3xLAVPkTTQI+EUvfW+HLJ820uWME/Tbpi4bjlPTd7mjzPT+RNB9SM/ZboSFimAmaviA==}
     dev: true
 
-  /@polkadot-cloud/react@0.1.121(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-91vEOoBWKRfh3NfEVrz/29ohQzLWqLDQJH9zggJIVYA2ycx1Q4jhX2bRjUV+f5hOttjbjcwWE0D7C2MxSnSNbg==}
+  /@polkadot-cloud/core@1.0.45:
+    resolution: {integrity: sha512-rtVQlaVnvqHiMW4CreowspZG+JXZQYMLjMXY3i9vRRnBcVa09D7ahNRbj6RixmUSSNADtQJS9AaQNMz6nJuyAQ==}
+    dev: true
+
+  /@polkadot-cloud/react@0.1.127(framer-motion@10.16.4)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-1jUmMCl7Kw2XsCAadU5xEzNNIs5L2Lf2PelgMQhmoYW35Hug6XW81iaOYqKJQRZv5JnnnxCWgmfkq7QLsQCaRQ==}
     peerDependencies:
       framer-motion: ^10.15.0
       react: ^18.2.0
@@ -2848,9 +2853,9 @@ packages:
       '@fortawesome/free-regular-svg-icons': 6.4.2
       '@fortawesome/free-solid-svg-icons': 6.4.2
       '@fortawesome/react-fontawesome': 0.2.0(@fortawesome/fontawesome-svg-core@6.4.2)(react@18.2.0)
-      '@ledgerhq/hw-transport-webhid': 6.27.19
+      '@ledgerhq/hw-transport-webhid': 6.27.20
       '@polkadot-cloud/assets': 0.1.34
-      '@polkadot-cloud/core': 1.0.43
+      '@polkadot-cloud/core': 1.0.45
       '@polkadot-cloud/utils': 0.0.25(@polkadot/util-crypto@12.5.1)
       '@polkadot/keyring': 12.5.1(@polkadot/util-crypto@12.5.1)(@polkadot/util@12.5.1)
       '@polkadot/util': 12.5.1
@@ -5808,7 +5813,7 @@ packages:
     resolution: {integrity: sha512-pjsTGODRHP+SG+h4hBkA9NmvHQeplkj48cB5/TUlzRVBZSz7k172Cu70lpGDkVsKDKG6AuCP2pyWKKzPQIzNTA==}
     hasBin: true
     dependencies:
-      '@ledgerhq/hw-transport': 6.28.8
+      '@ledgerhq/hw-transport': 6.29.0
       bip32: 4.0.0
       bip32-ed25519: github.com/Zondax/bip32-ed25519/0949df01b5c93885339bc28116690292088f6134
       bip39: 3.1.0
@@ -11544,13 +11549,6 @@ packages:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
       queue-microtask: 1.2.3
-
-  /rxjs@6.6.7:
-    resolution: {integrity: sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==}
-    engines: {npm: '>=2.0.0'}
-    dependencies:
-      tslib: 1.14.1
-    dev: true
 
   /rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}

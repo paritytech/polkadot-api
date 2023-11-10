@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@polkadot-cloud/core": "^1.0.43",
-    "@polkadot-cloud/react": "^0.1.121",
+    "@polkadot-cloud/react": "^0.1.127",
     "@storybook/addon-essentials": "^7.5.2",
     "@storybook/addon-interactions": "^7.5.2",
     "@storybook/addon-links": "^7.5.2",

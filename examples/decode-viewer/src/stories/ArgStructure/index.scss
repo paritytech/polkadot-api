@@ -1,0 +1,60 @@
+.help_tooltip {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.help_tooltip .help_tooltiptext_left {
+  visibility: hidden;
+  width: 30vw;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 0.6rem;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: 0.8rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -0.5rem;
+  left: 105%;
+  z-index: 9999;
+}
+
+.help_tooltip:hover .help_tooltiptext_left {
+  visibility: visible;
+}
+
+.help_tooltip .help_tooltiptext_right {
+  visibility: hidden;
+  width: 20vw;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 0.6rem;
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: 0.8rem;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  top: -0.5rem;
+  right: 105%;
+  z-index: 9999;
+}
+
+.help_tooltip:hover .help_tooltiptext_right {
+  visibility: visible;
+}
+
+.help_tooltip.path_class {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: "small";
+}
