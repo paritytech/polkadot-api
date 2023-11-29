@@ -26,6 +26,7 @@ const ProgramArgs = z.object({
   key: z.string().optional(),
   file: z.string().optional(),
   wsURL: z.string().optional(),
+  chainSpec: z.string().optional(),
   interactive: z.boolean(),
 })
 
@@ -45,6 +46,7 @@ program
     "path to descriptor metadata file; alternative to package json",
   )
   .option("w --wsURL <wsURL>", "websocket url to fetch metadata")
+  .option("c --chainSpec <chainSpec>", "chainspec for parachains")
   .option("-i, --interactive", "whether to run in interactive mode", false)
 
 program.parse()
@@ -87,6 +89,8 @@ if (!metadata) {
       }
     : options.wsURL
     ? { source: "ws" as const, url: options.wsURL }
+    : options.chainSpec
+    ? { source: "chainSpec" as const, chainSpec: options.chainSpec }
     : {
         source: "chain" as const,
         chain: await select({
