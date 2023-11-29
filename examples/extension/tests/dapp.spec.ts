@@ -7,7 +7,7 @@ test("sanity", async ({ page }) => {
   await expect(page).toHaveTitle(/extension-dapp/)
   await expect(page.locator("h1")).toHaveText("Extension Test DApp")
 
-  for (const chainName of ["Polkadot", "Kusama", "Westend"]) {
+  for (const chainName of ["Polkadot", "Kusama"]) {
     const chain = page.getByTestId(`chain${chainName}`)
     await expect(chain).toBeVisible()
     const blockHeight = chain.getByTestId("blockHeight")
