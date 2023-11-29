@@ -262,8 +262,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       '@substrate/connect':
-        specifier: file://./substrate-connect.tgz
-        version: file:packages/cli/substrate-connect.tgz
+        specifier: ^0.8.0
+        version: 0.8.0
       '@types/node':
         specifier: ^20.9.0
         version: 20.9.0
@@ -4830,6 +4830,17 @@ packages:
     dependencies:
       '@substrate/connect-extension-protocol': 1.0.1
       smoldot: 2.0.7
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: false
+
+  /@substrate/connect@0.8.0:
+    resolution: {integrity: sha512-p+LaqBuBWO+FbTEL0SgAo7/ASZzWYG54yF3ZAzNkmEz+52NjpNLLHM1u+8msF0LeHP+6FjDxLVbKpE2GBZP1Eg==}
+    requiresBuild: true
+    dependencies:
+      '@substrate/connect-extension-protocol': 1.0.1
+      smoldot: 2.0.13
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -13076,17 +13087,4 @@ packages:
 
   /zod@3.22.2:
     resolution: {integrity: sha512-wvWkphh5WQsJbVk1tbx1l1Ly4yg+XecD+Mq280uBGt9wa5BKSWf4Mhp6GmrkPixhMxmabYY7RbzlwVP32pbGCg==}
-    dev: false
-
-  file:packages/cli/substrate-connect.tgz:
-    resolution: {integrity: sha512-dT7TGdJhG5WwI3Gjh7H2uXGIIBK+2ovrsPcGJlKqQLzaZehY+eluZ9nw+lP9T8eG3lqW6ACkLRDL8+vUhKWmLA==, tarball: file:packages/cli/substrate-connect.tgz}
-    name: '@substrate/connect'
-    version: 0.7.35
-    requiresBuild: true
-    dependencies:
-      '@substrate/connect-extension-protocol': 1.0.1
-      smoldot: 2.0.13
-    transitivePeerDependencies:
-      - bufferutil
-      - utf-8-validate
     dev: false
