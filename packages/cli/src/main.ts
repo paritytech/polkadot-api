@@ -46,7 +46,7 @@ program
     "path to descriptor metadata file; alternative to package json",
   )
   .option("w --wsURL <wsURL>", "websocket url to fetch metadata")
-  .option("c --chainSpec <chainSpec>", "chainspec for parachains")
+  .option("c --chainSpec <chainSpec>", "chainspec to fetch metadata")
   .option("-i, --interactive", "whether to run in interactive mode", false)
 
 program.parse()

@@ -16,7 +16,7 @@ Options:
   k --key <key>              first key in descriptor metadata
   f --file <file>            path to descriptor metadata file; alternative to package json
   w --wsURL <wsURL>          websocket url to fetch metadata
-  c --chainSpec <chainSpec>  chainspec for parachains
+  c --chainSpec <chainSpec>  chainspec to fetch metadata
   -i, --interactive          whether to run in interactive mode (default: false)
   -h, --help                 display help for command
 ```
